@@ -28,5 +28,11 @@
     "@types/react-dom": "^19.0.0",
     "typescript": "^5.7.0"
   },
-  "engines": { "node": ">=20.9.0" }
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "sharp@0.34.5": true
+  }
 }
