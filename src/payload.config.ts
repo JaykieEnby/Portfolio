@@ -26,14 +26,14 @@ export default buildConfig({
   plugins: [
     s3Storage({
       collections: { media: true },
-      bucket: process.env.R2_BUCKET || '',
+      bucket: process.env.S3_BUCKET || '',
       config: {
         credentials: {
-          accessKeyId: process.env.R2_ACCESS_KEY_ID || '',
-          secretAccessKey: process.env.R2_SECRET_ACCESS_KEY || '',
+          accessKeyId: process.env.AWS_ACCESS_KEY_ID || '',
+          secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY || '',
         },
-        region: 'auto',
-        endpoint: process.env.R2_ENDPOINT,
+        region: process.env.AWS_REGION || '',
+        endpoint: process.env.AWS_ENDPOINT_URL_S3,
         forcePathStyle: true,
       },
     }),

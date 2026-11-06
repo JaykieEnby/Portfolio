@@ -4,7 +4,7 @@ You edit everything in the Payload admin at `/admin`: your photo, bio, skills, a
 
 ## Run it locally
 1. `npm install`
-2. Copy `.env.example` to `.env.local` and fill it in (Neon database URL, a random `PAYLOAD_SECRET`, your Cloudflare R2 bucket and keys).
+2. Copy `.env.example` to `.env.local` and fill it in (Neon database URL, a random `PAYLOAD_SECRET`, and your Neon Object Storage bucket and S3 credentials).
 3. `npm run dev`, then open http://localhost:3000/admin and create your first user.
    The first dev run also creates the database tables in Neon, so do this once before deploying.
 4. In the admin:
@@ -21,6 +21,6 @@ You edit everything in the Payload admin at `/admin`: your photo, bio, skills, a
 ## Notes
 - Contact form messages are saved in **Messages** in the admin (they are not emailed).
 - Vercel limits request bodies to 4.5 MB, so compress images before uploading large photos.
-- Your R2 bucket can stay private: Payload serves the files itself.
+- Your Neon Object Storage bucket can stay private: Payload serves the files itself.
 - If the admin shows an import map error, run `npm run generate:importmap`.
 - If install reports a peer-dependency conflict, align the `next` version with the one Payload's current template uses.
